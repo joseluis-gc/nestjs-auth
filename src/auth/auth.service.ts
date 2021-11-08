@@ -12,7 +12,13 @@ export class AuthService {
     ){
 
     }
+    
     async create(user:User): Promise<User>{
         return await this.userRepository.save(user);
     }
+
+    async findOneBy(condition): Promise<User>{
+        return await this.userRepository.findOne(condition);
+    }
+
 }
